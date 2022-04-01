@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App Movie</string>
+    <string name="look_up_word">Look up movie in a Browser Search</string>
+    <string name="look_up_words">Show Stored Genre</string>
+</resources>

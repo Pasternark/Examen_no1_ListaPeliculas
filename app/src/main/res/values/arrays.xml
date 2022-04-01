@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="generos">
+        <item>Accion</item>
+        <item>Aventuras</item>
+        <item>Ciencia Ficcion</item>
+        <item>Romance</item>
+        <item>Terror</item>
+        <item>Documentales</item>
+        <item>Suspenso</item>
+    </string-array>
+</resources>
