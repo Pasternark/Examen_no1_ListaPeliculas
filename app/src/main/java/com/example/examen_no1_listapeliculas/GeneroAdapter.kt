@@ -1,6 +1,7 @@
 package com.example.examen_no1_listapeliculas
 
 import android.content.Context
+import android.content.Intent
 import android.hardware.biometrics.BiometricManager
 import android.os.Build
 import android.view.LayoutInflater
@@ -34,6 +35,16 @@ RecyclerView.Adapter<GeneroAdapter.GeneroViewHolder>() {
     override fun onBindViewHolder(holder: GeneroViewHolder, position: Int) {
         val item = filteredGeneros.get(position)
         holder.button.text = item.toString()
+
+        holder.button.setOnClickListener {
+            val context = holder.view.context
+
+            val intent = Intent(context, DetailActivity::class.java)
+
+            intent.putExtra(DetailActivity.GENERO, holder.button.text.toString())
+
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = filteredGeneros.size
@@ -51,7 +62,7 @@ RecyclerView.Adapter<GeneroAdapter.GeneroViewHolder>() {
             // accessibility service announces "double tap to activate".
             // If a custom string is provided,
             // it announces "double tap to <custom string>".
-            val customString = host?.context?.getString(R.string.look_up_word)
+            val customString = host?.context?.getString(R.string.look_up_genres)
             val customClick =
                 AccessibilityNodeInfo.AccessibilityAction(
                     AccessibilityNodeInfo.ACTION_CLICK,
